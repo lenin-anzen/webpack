@@ -7,10 +7,8 @@
 
 	<title>Webpack</title>
 
-    <!--
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="assets/img/favicon.png">
-    -->
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/icon-square-small-slack.png">
+	<link rel="icon" type="image/png" href="assets/img/icon-square-small-slack.png">
 
 	<!--  Fonts and icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -23,72 +21,159 @@
 </head>
 
 <body class="index-page">
-<!-- Navbar -->
-<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
-	<div class="container">
-        <div class="navbar-header">
-	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-	        	<span class="sr-only">Toggle navigation</span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	    	</button>
-	    </div>
-	    <div class="collapse navbar-collapse" id="navigation-index">
-	    	<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a rel="tooltip" title="Fork us on Github" data-placement="bottom" href="https://github.com/lenin-anzen/webpack" target="_blank" class="btn btn-white btn-simple btn-just-icon">
-						<i class="fa fa-github"></i>
-					</a>
-				</li>
-	    	</ul>
-	    </div>
-	</div>
-</nav>
-<!-- End Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Webpack</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation-index">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a rel="tooltip" title="Instalación" data-placement="bottom" href="#installation" class="btn btn-white btn-simple btn-just-icon">
+                            Instalación
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="tooltip" title="Loaders" data-placement="bottom" href="#loaders" class="btn btn-white btn-simple btn-just-icon">
+                            Loaders
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="tooltip" title="Plugins" data-placement="bottom" href="#plugins" class="btn btn-white btn-simple btn-just-icon">
+                            Plugins
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="tooltip" title="Desarrollo" data-placement="bottom" href="#development" class="btn btn-white btn-simple btn-just-icon">
+                            Desarrollo
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="tooltip" title="Producción" data-placement="bottom" href="#production" class="btn btn-white btn-simple btn-just-icon">
+                            Producción
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="tooltip" title="Fork us on Github" data-placement="bottom" href="https://github.com/lenin-anzen/webpack" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
 
-<div class="wrapper">
-	<div class="header header-filter"><!-- style="background-image: url('assets/img/bg2.jpeg');" -->
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="brand">
-						<h1>Webpack</h1>
-						<h3>Explanation of how Webpack works</h3>
-					</div>
-				</div>
-			</div>
+    <div class="wrapper">
+        <div class="header header-filter"><!-- style="background-image: url('assets/img/bg2.jpeg');" -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="brand">
+                            <h1>Webpack</h1>
+                            <h3>Permite la generarción de "<i>bundles</i>" para desarrollo y producción.</h3>
+                        </div>
+                    </div>
+                </div>
 
-		</div>
-	</div>
+            </div>
+        </div>
 
-	<div class="main main-raised">
-		<div class="section section-basic">
-	    	<div class="container">
-	            <div class="title">
-	                <h2>Instalación</h2>
-	            </div>
-	    	</div>
-	    </div>
-	</div>
-    <footer class="footer">
-	    <div class="container">
-	        <nav class="pull-left">
-	            <ul>
-					<li>
-						<a href="" target="_blank" title="">
-						</a>
-					</li>
-	            </ul>
-	        </nav>
-	        <div class="copyright pull-right">
-	            &copy; 2017, made with <i class="material-icons">favorite</i> by <a href="https://travis-ci.org/lenin-anzen" target="_blank" title="Lenin Meza">Lenin Meza</a>.
-	        </div>
-	    </div>
-	</footer>
-</div>
+        <div class="main main-raised">
+            <div class="section section-basic" id="installation">
+                <div class="container">
+                    <div class="title">
+                        <h2>Instalación</h2>
+                        <p>Instalación local de Webpack</p>
+                        <pre>mkdir webpack-test1 && cd webpack-test1
+npm init -y && npm i --save-dev webpack</pre>
+                        <p>Generar archivo de prueba en directorio "src" con el siguiente contenido:</p>
+                        <pre>const greet = function( name ) {
+  return 'Hello ' + name + '!';
+};
+console.log(greet('Lenin Meza'));
+</pre>
+                        <p>Un archivo de configuración(<i>webpack.config.js</i>) básico sería</p>
+                        <pre>var path = require('path');
 
-<!--   Core JS Files   -->
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};</pre>
+                        <p>Ejecutar Webpack indicando el archivo de configuración:</p>
+                        <pre>./node_modules/.bin/webpack --config webpack.config.js --colors -p</pre>
+                        <p>Webpack generará un archivo bundle optimizado para producción.</p>
+                        <pre>Hash: 848c6e51cb7022588343
+Version: webpack 3.1.0
+Time: 136ms
+    Asset       Size  Chunks             Chunk Names
+bundle.js  539 bytes       0  [emitted]  main
+   [0] ./src/index.js 100 bytes {0} [built]</pre>
+                        <p>El archivo puede ser probado con NodeJs:</p>
+                        <pre>node dist/bundle.js
+Hello Lenin Meza!</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-basic" id="loaders">
+                <div class="container">
+                    <div class="title">
+                        <h2>Loaders</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-basic" id="plugins">
+                <div class="container">
+                    <div class="title">
+                        <h2>Plugins</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-basic" id="development">
+                <div class="container">
+                    <div class="title">
+                        <h2>Desarrollo</h2>
+                        <p>Instalación local de WebpackDevServer</p>
+                        <pre>npm i --save-dev webpack-dev-server</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-basic" id="production">
+                <div class="container">
+                    <div class="title">
+                        <h2>Producción</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="" target="_blank" title="">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; 2017, made with <i class="material-icons">favorite</i> by <a href="https://travis-ci.org/lenin-anzen" target="_blank" title="Lenin Meza">Lenin Meza</a>.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--   Core JS Files   -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="assets/js/material.min.js"></script>
