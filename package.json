@@ -1,0 +1,23 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "Explanation of how Webpack works",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenin-anzen/webpack.git"
+  },
+  "keywords": ["webpack"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lenin-anzen/webpack/issues"
+  },
+  "homepage": "https://github.com/lenin-anzen/webpack#readme",
+  "devDependencies": {
+    "eslint": "^4.1.1"
+  }
+}
