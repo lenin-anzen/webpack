@@ -18,6 +18,15 @@
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="assets/css/material-kit.css" rel="stylesheet"/>
+    <style>
+        a[target="_blank"]:after {
+            font-family: 'FontAwesome';
+            content: " \f08e";
+        }
+        a.without-fa:after {
+            content: "";
+        }
+    </style>
 </head>
 
 <body class="index-page">
@@ -52,12 +61,12 @@
                     </li>
                     <li>
                         <a rel="tooltip" title="Desarrollo" data-placement="bottom" href="#development" class="btn btn-white btn-simple btn-just-icon">
-                            Desarrollo
+                            Dev
                         </a>
                     </li>
                     <li>
                         <a rel="tooltip" title="Producción" data-placement="bottom" href="#production" class="btn btn-white btn-simple btn-just-icon">
-                            Producción
+                            Dist
                         </a>
                     </li>
                     <li>
@@ -90,8 +99,8 @@
             <div class="section section-basic" id="installation">
                 <div class="container">
                     <div class="title">
-                        <h2>Instalación</h2>
-                        <p>Instalación local de Webpack</p>
+                        <h2><a href="https://webpack.js.org/guides/installation/" target="_blank" title="Instalación">Instalación</a></h2>
+                        <p>Instalación local de <a href="https://webpack.js.org/" target="_blank" title="Webpack Module Bundler">Webpack</a></p>
                         <pre>mkdir webpack-test1 && cd webpack-test1
 npm init -y && npm i --save-dev webpack</pre>
                         <p>Generar archivo de prueba en directorio "src" con el siguiente contenido:</p>
@@ -128,30 +137,226 @@ Hello Lenin Meza!</pre>
             <div class="section section-basic" id="loaders">
                 <div class="container">
                     <div class="title">
-                        <h2>Loaders</h2>
+                        <h2><a href="https://webpack.js.org/loaders/" target="_blank" title="Module Loaders">Module Loaders</a></h2>
+                        <p>Webpack permite transformar el código fuente de un módulo mediante su pre-procesamiento.</p>
+                        <p>Los loaders más usados son:</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Instalación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/file-loader/" target="_blank" title="file-loader">file-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Emite objetos como archivos y regresa su URL pública.</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev file-loader</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/style-loader" target="_blank" title="style-loader">style-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Agrega CSS al DOM inyectando una etiqueta <code>&lt;style&gt;</code></p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev style-loader</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/css-loader" target="_blank" title="css-loader">css-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Interpreta <code>@import</code> y <code>url()</code> como <code>import/require()</code> y los resuelve.</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev css-loader</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/less-loader/" target="_blank" title="less-loader">less-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Compila LESS a CSS</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev less-loader less</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/sass-loader/" target="_blank" title="sass-loader">sass-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Compila SASS/SCSS a CSS</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev sass-loader node-sass</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/loaders/babel-loader/" target="_blank" title="babel-loader">babel-loader</a>
+                                        </td>
+                                        <td>
+                                            <p>Transpila ECMAScript 6 o 7 a ECMAScript 5</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev babel-loader babel-core 
+babel-preset-env</pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="section section-basic" id="plugins">
                 <div class="container">
                     <div class="title">
-                        <h2>Plugins</h2>
+                        <h2><a href="https://webpack.js.org/plugins" target="_blank" title="Plugins">Plugins</a></h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Instalación/Configuración</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/plugins/html-webpack-plugin/" target="_blank" title="HtmlWebpackPlugin">HtmlWebpackPlugin</a>
+                                        </td>
+                                        <td>
+                                            <p>Genera archivo(s) HTML</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev html-webpack-plugin</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/plugins/extract-text-webpack-plugin/" target="_blank" title="ExtractTextWebpackPlugin">ExtractTextWebpackPlugin</a>
+                                        </td>
+                                        <td>
+                                            <p>Permite extraer CSS a un archivo</p>
+                                        </td>
+                                        <td>
+                                            <pre>npm install --save-dev extract-text-webpack-plugin</pre>
+                                        </td>
+                                    </tr>https://webpack.js.org/plugins/define-plugin/
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/guides/hot-module-replacement/" target="_blank" title="Hot Module Replacement">Hot Module Replacement</a>
+                                        </td>
+                                        <td>
+                                            <p>Permite actualizar módulos sin recargar la página.</p>
+                                        </td>
+                                        <td>
+                                            <p>Viene incluido con Webpack. Se habilita con:</p>
+                                            <pre>plugins: [
+    new webpack.HotModuleReplacementPlugin()
+],
+devServer: {
+    hot: true,
+}</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/plugins/define-plugin/" target="_blank" title="DefinePlugin">DefinePlugin</a>
+                                        </td>
+                                        <td>
+                                            <p>Permite crear constantes globales</p>
+                                        </td>
+                                        <td>
+                                            <p>Viene incluido con Webpack. Se habilita con:</p>
+                                            <pre>plugins:[
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
+]</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/plugins/uglifyjs-webpack-plugin/" target="_blank" title="UglifyJsPlugin">UglifyJsPlugin</a>
+                                        </td>
+                                        <td>
+                                            <p>Minimiza archivos mediante <a href="http://lisperator.net/uglifyjs/" target="_blank" title="UglifyJS">UglifyJS</a>.</p>
+                                        </td>
+                                        <td>
+                                            <p>Viene incluido con Webpack. Se habilita con:</p>
+                                            <pre>plugins:[
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
+    })
+]</pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://webpack.js.org/plugins/loader-options-plugin/" target="_blank" title="LoaderOptionsPlugin">LoaderOptionsPlugin</a>
+                                        </td>
+                                        <td>
+                                            <p>Configura opciones globales para los Loaders.</p>
+                                        </td>
+                                        <td>
+                                            <p>Viene incluido con Webpack. Se habilita con:</p>
+                                            <pre>new webpack.LoaderOptionsPlugin({
+  minimize: true,
+  debug: false,
+  options: {
+    context: __dirname
+  }
+})</pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="section section-basic" id="development">
                 <div class="container">
                     <div class="title">
-                        <h2>Desarrollo</h2>
-                        <p>Instalación local de WebpackDevServer</p>
+                        <h2><a href="https://webpack.js.org/guides/development/" target="_blank" title="Desarrollo">Desarrollo</a></h2>
+                        <p>La forma ideal y más rápida para desarrollar es con <a href="https://webpack.js.org/configuration/dev-server/" target="_blank" title="WebpackDevServer">WebpackDevServer</a> ya que contiene un servidor web(<i>Express</i>), "Live reloading" y HMR(<i>Hot Module Replacement</i>) entre otros Features.</p>
+                        <p>Instalación local de WebpackDevServer:</p>
                         <pre>npm i --save-dev webpack-dev-server</pre>
+                        <p>Dentro del archivo de configuración(<i>webpack.config.js</i>) se debe agregar la configuración:</p>
+                        <pre>devServer: {
+  contentBase: path.join(__dirname, "dist"),
+  compress: true,
+  progress: true,
+  stats: "errors-only",
+  host: "0.0.0.0",
+  port: 9000,
+  hot: true
+}</pre>
                     </div>
                 </div>
             </div>
             <div class="section section-basic" id="production">
                 <div class="container">
                     <div class="title">
-                        <h2>Producción</h2>
+                        <h2><a href="https://webpack.js.org/guides/production/" target="_blank" title="Producción">Producción</a></h2>
+                        <p>Las configuraciones para optimizar un bundle para producción son las siguientes:</p>
                     </div>
                 </div>
             </div>
@@ -161,8 +366,8 @@ Hello Lenin Meza!</pre>
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="" target="_blank" title="">
-                            </a>
+                            <!-- <a href="" target="_blank" title="">
+                            </a> -->
                         </li>
                     </ul>
                 </nav>
