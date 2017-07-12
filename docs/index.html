@@ -227,6 +227,10 @@ babel-preset-env</pre>
                 <div class="container">
                     <div class="title">
                         <h2><a href="https://webpack.js.org/plugins" target="_blank" title="Plugins">Plugins</a></h2>
+                        <ul>
+                            <li><p><a href="" target="_blank" title=""></a></p></li>
+                            <li><p><a href="https://github.com/webpack/docs/wiki/list-of-plugins" target="_blank" title="">Wiki: list of plugins</a></p></li>
+                        </ul>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover table-condensed">
                                 <thead>
@@ -303,7 +307,11 @@ devServer: {
                                             <p>Viene incluido con Webpack. Se habilita con:</p>
                                             <pre>plugins:[
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
+      sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0),
+      compress: {
+        warnings: false,
+		comments: false
+      }
     })
 ]</pre>
                                         </td>
@@ -357,6 +365,39 @@ devServer: {
                     <div class="title">
                         <h2><a href="https://webpack.js.org/guides/production/" target="_blank" title="Producción">Producción</a></h2>
                         <p>Las configuraciones para optimizar un bundle para producción son las siguientes:</p>
+                        <ul>
+                            <li><p>Se debe usar el plugin <strong>UglifyJsPlugin</strong></p></li>
+                            <li><p>Se debe usar el plugin <strong>LoaderOptionsPlugin</strong></p></li>
+                            <li><p>El tipo del SourceMap(<i>devtool</i>) debe ser: <strong>cheap-module-source-map</strong></p></li>
+                            <li><p>El valor de <i>process.env.NODE_ENV</i> debe ser: <strong>production</strong></p></li>
+                        </ul>
+                        <p>Un ejemplo del archivo de configuración para producción seria:</p>
+                        <pre>module.exports = {
+  output: {
+    path: path.join(__dirname, '/../dist/assets'),
+    filename: '[name].bundle.js',
+    publicPath: publicPath,
+    sourceMapFilename: '[name].map'
+  },
+
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
+      compress: {
+        screw_ie8: true
+      },
+      comments: false
+    })
+  ]
+}</pre>
                     </div>
                 </div>
             </div>
@@ -372,7 +413,7 @@ devServer: {
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; 2017, made with <i class="material-icons">favorite</i> by <a href="https://travis-ci.org/lenin-anzen" target="_blank" title="Lenin Meza">Lenin Meza</a>.
+                    &copy; 2017, made with <i class="material-icons">favorite</i> by <a href="https://travis-ci.org/lenin-anzen" target="_blank" title="Lenin Meza">Lenin Meza</a>. Thanks to <a href="http://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a>.
                 </div>
             </div>
         </footer>
