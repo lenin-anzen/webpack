@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint . --fix",
-    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "jest --coverage && shx cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,11 @@
     "coveralls": "^2.13.1",
     "eslint": "^4.1.1",
     "eslint-config-google": "^0.9.1",
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "shx": "^0.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom" : ["src/**/*.{js}", "!**/node_modules/**", "!**/vendor/**"]
   }
 }
