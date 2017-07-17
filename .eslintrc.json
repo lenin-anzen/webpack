@@ -1,6 +1,12 @@
 {
+    "extends": "google",
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
     "env": {
-        "browser": true
+      "jest": true,
+      "node": true,
+      "browser": true
     },
     "rules": {
     }
