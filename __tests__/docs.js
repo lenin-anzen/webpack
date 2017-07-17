@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Test Docs directory', () => {
-  it('Check if it is equal', () => {
-    expect(1).toBe(1);
-  });
+const sum = require('../src/index');
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });

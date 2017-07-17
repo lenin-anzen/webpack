@@ -1,3 +1,12 @@
 'use strict';
 
-console.log(123);
+/**
+ * Basic sum function
+ * @param {number} a 
+ * @param {number} b
+ * @return {number} 
+ */
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
